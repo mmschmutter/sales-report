@@ -64,7 +64,7 @@ public class Main {
     static void print(TreeSet<Product> products, XWPFDocument document) throws Exception {
         XWPFParagraph title = document.getParagraphs().get(0); // get title line of Word document
         XWPFRun setTitle = title.createRun(); // edit title line
-        setTitle.setText(" Per Month Ordered By Quantity");
+        setTitle.setText(" (ordered by quantity per month)");
         document.removeBodyElement(document.getPosOfTable(document.getTables().get(0))); // delete original table
         XWPFTable table = document.createTable(products.size() + 1, 3); // create new table
         String[] headers = {"Product Name", "Sale Date", "Sale Quantity"};
